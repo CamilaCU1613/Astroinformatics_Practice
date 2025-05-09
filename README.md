@@ -1,1 +1,0 @@
-# Astroinformatics_Practice
