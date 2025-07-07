@@ -18,23 +18,31 @@ When processing TESS light curves, it is critical to consider various edge cases
 Example:
 ___________________________________________________________________________________________
 df = pd.read_csv("empty_lightcurve.csv") # Empty file
+
 print(df.head()) # Error or empty data frame breaking further analysis
 
 flux = np.array([1.2, 1.3, np.nan, 1.5])
+
 mean_flux = np.mean(flux) # Result will be NaN if not filtered
 
 t = np.array([1, 2]) # Only two points
+
 y = np.array([0.9, 1.0])
+
 frequency, power = LombScargle(t, y).autopower() # May fail or warn
 
 flux = np.array([1.1, -0.5, 1.3]) # Negative flux values
+
 if np.any(flux < 0):
+
 print("Warning: Negative flux values ​​detected.") # This could indicate a preprocessing error
 
 with open("lightcurve_typo.csv", "r") as f:
+
 data = f.read() # FileNotFoundError if the file does not exist
 
 df = pd.DataFrame({'time': ['a', 'b', 'c'], 'flux': [1.0, 1.1, 1.2]})
+
 df['time'] = pd.to_numeric(df['time']) # ValueError: Unable to parse string "a"
 
 ______________________________________________________________________________________________
@@ -61,6 +69,9 @@ _______________________________
 CREDITS
 
 Developed by: Camila Cárdenas Uribe
+
 Course: Astroinformatics 2025-1
+
 Instructor: Nina Hernitschek
+
 Institution: University of Antofagasta
