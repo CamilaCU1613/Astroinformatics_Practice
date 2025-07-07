@@ -1,0 +1,39 @@
+TESS Lightcurve Processing
+
+This section describes the basic steps for processing TESS lightcurves as part of the Astroinformatics 2025-1 project. The goal was to convert observational data on exoplanet transits into clean, analyzable lightcurves suitable for time-series analysis and classification.
+
+Step-by-step processing workflow:
+
+1. Data retrieval: TESS lightcurve data (FITS format) were downloaded from the MAST portal. A .sh script is included in the FITS_File directory for automated batch downloads.
+
+2. FITS to CSV conversion: FITS files were converted to .csv format using TOPCAT for ease of handling in Python. The resulting .csv files are stored in the CSV_Files folder.
+
+3. File Organization: A script was used to generate a list of .csv file names and store them in a text file (CSV_list/file_list.txt). This allows batch processing of all available light curves.
+
+4. Light Curve Splitting: Long CSV files were split into smaller segments to isolate objects into groups.
+
+5. Raw Light Curve Plotting:
+Light curves were visualized using TOPCAT and Python. The Light_curve/ folder contains plots exported from TOPCAT, while LightCurve_python/ contains .png plots generated with matplotlib.
+
+6. Converting Light Curves to .lc Format:
+The cleaned CSV light curves were converted to an .lc format compatible with time series tools such as LombScargle. These are stored in the LC_File directory.
+
+7. Outlier Detection:
+Using the astropy.stats module, statistical filters were applied to identify and, optionally, remove anomalous flow points.
+
+8. Time Series Analysis:
+The periodicity of the refined light curves was analyzed using the Lomb-Scargle periodogram. The periodograms and phase-folded light curves are stored in the Statistical_Analysis folder.
+
+
+
+Output Summary
+Folder	                      Content Description
+FITS_File/	                  Original FITS files and download script
+CSV_Files/	                  Converted .csv files from FITS
+CSV_list/	                    Script and list of filenames
+Splitting/	                  Scripts and resulting split files
+Light_curve/	                Plots generated in TOPCAT
+LightCurve_python/	          Matplotlib-generated plots
+LC_File/	                    Converted .lc format light curves
+Outliers/	                    Outlier detection code and visual outputs
+Statistical_Analysis/	        Periodograms, phased curves, statistical summaries
