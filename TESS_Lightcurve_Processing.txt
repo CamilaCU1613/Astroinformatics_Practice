@@ -27,13 +27,14 @@ The periodicity of the refined light curves was analyzed using the Lomb-Scargle 
 
 
 Output Summary
-Folder	                      Content Description
-FITS_File/	                  Original FITS files and download script
-CSV_Files/	                  Converted .csv files from FITS
-CSV_list/	                    Script and list of filenames
-Splitting/	                  Scripts and resulting split files
-Light_curve/	                Plots generated in TOPCAT
-LightCurve_python/	          Matplotlib-generated plots
-LC_File/	                    Converted .lc format light curves
-Outliers/	                    Outlier detection code and visual outputs
-Statistical_Analysis/	        Periodograms, phased curves, statistical summaries
+
+
+FITS_File: Original FITS files and download script
+CSV_Files: Converted .csv files from FITS
+CSV_list: Script and list of filenames
+Splitting: Scripts and resulting split files
+Light_curve: Plots generated in TOPCAT
+LightCurve_python: Matplotlib-generated plots
+LC_File: Converted .lc format light curves
+Outliers: Outlier detection code and visual outputs
+Statistical_Analysis: Periodograms, phased curves, statistical summaries
