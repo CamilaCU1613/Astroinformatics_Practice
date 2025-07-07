@@ -66,6 +66,12 @@ pip install -r requirements.txt
 _______________________________
 
 
+EXTERNAL RESOURCES
+MAST Archive: https://mast.stsci.edu/
+TOPCAT Tool: http://www.star.bris.ac.uk/~mbt/topcat/
+Astropy Documentation: https://docs.astropy.org/
+
+
 CREDITS
 
 Developed by: Camila Cárdenas Uribe
